@@ -17,4 +17,7 @@ public class Rubrica {
 		listaRubrica.put(cognome +" "+ nome, contatto);
 		return contatto;
 	}
+	
+	//secondo metod
+	
 }
