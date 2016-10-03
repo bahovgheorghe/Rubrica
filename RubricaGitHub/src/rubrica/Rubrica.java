@@ -14,6 +14,6 @@ public class Rubrica {
 		Voce contatto = new Voce(cognome,nome,telefono);
 		
 		listaRubrica.put(cognome +" "+ nome, contatto);
-		return null;
+		return contatto;
 	}
 }
