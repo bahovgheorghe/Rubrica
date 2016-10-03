@@ -30,12 +30,14 @@ public class Rubrica {
 	//terzo metodo
 	public String cancellaVoce(String cognome,String nome){
 		String ok= "voce elliminata";
+		String ko= "voce non presente nella rubrica";
 		
 		if(listaRubrica.containsKey(cognome +" "+ nome)){
 			listaRubrica.remove(cognome +" "+ nome);
+			return ok ;
 		}
+		return ko;
 		
-		return ok ;
 	}
 	
 }
