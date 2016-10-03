@@ -27,4 +27,15 @@ public class Rubrica {
 		return v;
 	}
 	
+	//terzo metodo
+	public String cancellaVoce(String cognome,String nome){
+		String ok= "voce elliminata";
+		
+		if(listaRubrica.containsKey(cognome +" "+ nome)){
+			listaRubrica.remove(cognome +" "+ nome);
+		}
+		
+		return ok ;
+	}
+	
 }
