@@ -41,5 +41,10 @@ public class Rubrica {
 		
 	}
 	
+<<<<<<< HEAD
 	//comme
+=======
+	//commento per conflitto
+	
+>>>>>>> branch 'master' of https://github.com/bahovgheorghe/Rubrica.git
 }
