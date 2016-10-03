@@ -39,8 +39,9 @@ public class Rubrica {
 		}
 		return ko;
 		
+		
+		
+		//nuovo commento
+		//commento
 	}
-	
-	//prova per conflitto
-	
 }
