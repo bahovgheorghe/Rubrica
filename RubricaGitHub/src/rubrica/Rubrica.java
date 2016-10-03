@@ -7,6 +7,7 @@ public class Rubrica {
 
 	private Map<String,Voce> listaRubrica = new TreeMap<String,Voce>();
 	
+	//primo metodo
 	public Voce aggiungiVoce(String cognome,String nome,String telefono) throws VoceEsiste{
 		if(listaRubrica.containsKey(cognome +" "+ nome)){
 			throw new VoceEsiste("Questo contatto e gia presente nella tua rubrica");
