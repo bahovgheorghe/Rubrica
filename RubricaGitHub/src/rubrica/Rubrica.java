@@ -20,6 +20,7 @@ public class Rubrica {
 	
 	//secondo metodo
 	public Voce cercaVoce(String cognome, String nome){
+		//dichiara voce vuota
 		Voce v = null;
 		if(listaRubrica.containsKey(cognome+" "+nome)){
 			v = listaRubrica.get(cognome+" "+nome);
