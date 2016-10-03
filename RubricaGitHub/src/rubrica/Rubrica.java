@@ -40,5 +40,7 @@ public class Rubrica {
 		return ko;
 		
 	}
-
+	
+	//prova per conflitto
+	
 }
