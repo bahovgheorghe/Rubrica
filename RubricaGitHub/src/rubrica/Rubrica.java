@@ -18,6 +18,13 @@ public class Rubrica {
 		return contatto;
 	}
 	
-	//secondo metod
+	//secondo metodo
+	public Voce cercaVoce(String cognome, String nome){
+		Voce v = null;
+		if(listaRubrica.containsKey(cognome+" "+nome)){
+			v = listaRubrica.get(cognome+" "+nome);
+		}		
+		return v;
+	}
 	
 }
