@@ -20,25 +20,4 @@ public class Rubrica {
 		return contatto;
 	}
 
-	// secondo metodo
-	public Voce cercaVoce(String cognome, String nome) {
-		// dichiara voce vuota
-		Voce v = null;
-		if (listaRubrica.containsKey(cognome + " " + nome)) {
-			v = listaRubrica.get(cognome + " " + nome);
-		}
-		return v;
-	}
-
-	// terzo metodo
-	public String cancellaVoce(String cognome, String nome) {
-		String ok = "voce elliminata";
-		String ko = "voce non presente nella rubrica";
-
-		if (listaRubrica.containsKey(cognome + " " + nome)) {
-			listaRubrica.remove(cognome + " " + nome);
-			return ok;
-		}
-		return ko;
-	}
 }
