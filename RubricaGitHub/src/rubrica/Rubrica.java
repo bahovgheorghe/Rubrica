@@ -29,7 +29,7 @@ public class Rubrica {
 				contatto = listaRubrica.get(cognome +" "+ nome);
 			}else{
 				throw new VoceNonEsiste(
-						"Questo contatto non e presente nella tua rubrica");
+						"Ricerca - Questo contatto non è presente nella tua rubrica");
 			}
 			//ritorno l'ogetto nuovo
 			return contatto;
@@ -44,11 +44,12 @@ public class Rubrica {
 	
 	//4- Aggiorna il numero di telefono - Se non esiste lancia UtenteNonEsiste
 	public Voce aggiornaVoce(String cognome, String nome, String telefono) throws VoceNonEsiste{
-		if (!listaRubrica.containsKey(cognome + " " + nome)) {
+		Voce v = null;
+		if (!listaRubrica.containsKey(cognome+" "+ nome)) {
 			throw new VoceNonEsiste(
-					"Questo contatto non esiste");
+					"Aggiornamento - Questo contatto non esiste");
 		}
-		Voce v = listaRubrica.get(cognome+" "+nome);
+		v = listaRubrica.get(cognome+" "+nome);
 		v.setTelefono(telefono);
 		return v;
 	}
@@ -58,10 +59,9 @@ public class Rubrica {
 
 			if (listaRubrica.containsKey(cognome + " " + nome)) {
 				listaRubrica.remove(cognome + " " + nome);
-				System.out.println("Contatto eliminato");
 			}else{
 				throw new VoceNonEsiste(
-						"Questo contatto non e presente nella tua rubrica");
+						"Eliminazione - Questo contatto non è presente nella tua rubrica");
 			}
 			
 			return null;

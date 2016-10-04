@@ -1,7 +1,6 @@
 package testMain;
 
 import java.util.*;
-
 import rubrica.*;
 
 public class test {
@@ -24,8 +23,17 @@ public class test {
 		
 		//Metodo 2
 		
-		Voce preso1 = r.getVoce("Cracco", "Carlo");//Non esiste
+		try{
+			Voce preso1 = r.getVoce("Cracco", "Carlo");//Non esiste
+		}catch(VoceNonEsiste e){
+			System.out.println(e);
+		}
+		
 		Voce preso2 = r.getVoce("Rossi", "Mario");//Trovato
+		
+		System.out.println(preso2.getCognome()
+		+"\t"+preso2.getNome()
+		+"\t"+preso2.getTelefono());
 		
 		//Metodo 3
 		
@@ -38,25 +46,34 @@ public class test {
 		
 		
 		//Metodo 4
-		Voce aggiornato1 = r.aggiornaVoce("Cracco", "Carlo", "5555");//Non esiste
-		Voce aggiornato2 = r.aggiornaVoce("Gialli", "Giorna", "5555");//Aggiorna
 		
+		try{
+			Voce aggiornato1 = r.aggiornaVoce("Cracco", "Carlo", "5555");//Non esiste
+		}catch(Exception e){
+			System.out.println(e);
+		}
+		
+		Voce aggiornato2 = r.aggiornaVoce("Gialli", "Giorgia", "5555");//Aggiorna
 		System.out.println(aggiornato2.getCognome()
 				+"\t"+aggiornato2.getNome()
 				+"\t"+aggiornato2.getTelefono());
+
 		
 		//Metodo 5
-		Voce cancellato1 = r.cancellaVoce("Cracco", "Carlo");//Non esiste
-		Voce cancellato2 = r.cancellaVoce("Rossi", "Mario");//Cancellato
 		
-		for(Voce v: elenco){
+		try{
+			Voce cancellato1 = r.cancellaVoce("Cracco", "Carlo");//Non esiste
+		}catch(Exception e){
+			System.out.println(e);
+		}	
+		
+		Voce cancellato2 = r.cancellaVoce("Rossi", "Mario");//Cancellato
+		List<Voce> elenco2 = r.getTuttiVoci(r);
+		
+		for(Voce v: elenco2){
 			System.out.println(v.getCognome()+"\t"
 					+v.getNome()+"\t"
 					+v.getTelefono());
 		}
-	
-		
-		
-		
 	}
 }
