@@ -20,10 +20,20 @@ public class Rubrica {
 	}
 	
 	//2- Trovare contatto in Rubrica - Se non esiste lancia UtenteNonEsiste
-	public Voce getVoce(String cognome, String nome){
-		
-		return null;
-	}
+		public Voce getVoce(String cognome, String nome) throws VoceNonEsiste{
+			//creo nuovo ogetto vuoto
+			Voce contatto = null;
+			//controllo se nella mia lista esiste un contatto con queste credenziali
+			if (listaRubrica.containsKey(cognome +" "+ nome)){
+				//se esiste lo assegno al nuovo ogetto
+				contatto = listaRubrica.get(cognome +" "+ nome);
+			}else{
+				throw new VoceNonEsiste(
+						"Questo contatto non e presente nella tua rubrica");
+			}
+			//ritorno l'ogetto nuovo
+			return contatto;
+		}
 	
 	//3- Ritorna tutti i contatti in Rubrica
 	public List<Voce> getTuttiVoci(Rubrica r){
@@ -44,9 +54,19 @@ public class Rubrica {
 	}
 	
 	//5- Elimina voce dalla Rubrica - Se non esiste lancia UtenteNonEsiste
-	public Voce cancellaVoce(String cognome, String nome){
-		
-		return null;
-	}
+		public Voce cancellaVoce(String cognome, String nome) throws VoceNonEsiste{
+
+			if (listaRubrica.containsKey(cognome + " " + nome)) {
+				listaRubrica.remove(cognome + " " + nome);
+				System.out.println("Contatto eliminato");
+			}else{
+				throw new VoceNonEsiste(
+						"Questo contatto non e presente nella tua rubrica");
+			}
+			
+			return null;
+			
+			
+		}
 
 }
