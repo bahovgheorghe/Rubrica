@@ -27,14 +27,20 @@ public class Rubrica {
 	
 	//3- Ritorna tutti i contatti in Rubrica
 	public List<Voce> getTuttiVoci(Rubrica r){
-		
-		return null;
+		List<Voce> elenco = new ArrayList<Voce>();
+		elenco.addAll(listaRubrica.values());
+		return elenco;
 	}
 	
 	//4- Aggiorna il numero di telefono - Se non esiste lancia UtenteNonEsiste
-	public Voce aggiornaVoce(String cognome, String nome, String telefono){
-		
-		return null;
+	public Voce aggiornaVoce(String cognome, String nome, String telefono) throws VoceNonEsiste{
+		if (!listaRubrica.containsKey(cognome + " " + nome)) {
+			throw new VoceNonEsiste(
+					"Questo contatto non esiste");
+		}
+		Voce v = listaRubrica.get(cognome+" "+nome);
+		v.setTelefono(telefono);
+		return v;
 	}
 	
 	//5- Elimina voce dalla Rubrica - Se non esiste lancia UtenteNonEsiste
